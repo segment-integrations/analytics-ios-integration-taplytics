@@ -20,12 +20,13 @@
 
         NSMutableDictionary *options = 	[[NSMutableDictionary alloc] init];
         [options setValue:[self delayLoad] forKey:@"delayLoad"];
-        [options setValue:[self shakeMenu] forKey:@"shakeMenu"];
         [options setValue:[self pushSandbox] forKey:@"pushSandbox"];
         [options setValue:[self taplyticsOptionSessionBackgroundTime] forKey:@"TaplyticsOptionSessionBackgroundTime"];
+        [self putDefaultBooleansWithSettings:settings withSettingsKey:@"liveUpdate_V2" andOptions:options withOptionsKey:@"liveUpdate"];
+        [self putDefaultBooleansWithSettings:settings withSettingsKey:@"shakeMenu_V2" andOptions:options withOptionsKey:@"shakeMenu"];
         
-        [self.taplyticsClass startTaplyticsAPIKey:apiKey options:settings];
-        SEGLog(@"[[Taplytics startTaplyticsAPIKey:%@ options:%@]]", apiKey, settings);
+        [self.taplyticsClass startTaplyticsAPIKey:apiKey options:options];
+        SEGLog(@"[[Taplytics startTaplyticsAPIKey:%@ options:%@]]", apiKey, options);
     }
     return self;
 }
@@ -37,6 +38,17 @@
         self.taplyticsClass = taplyticsClass;
     }
     return self;
+}
+
+- (void) putDefaultBooleansWithSettings:(NSDictionary *)settings withSettingsKey:(NSString *)settingsKey andOptions:(NSDictionary *)options withOptionsKey:(NSString *)optionKey {
+    NSString *val = [settings objectForKey:settingsKey];
+    if(!val)
+        return;
+    if([val isEqualToString:@"true"]){
+        [options setValue:@YES forKey:optionKey];
+    } else if([val isEqualToString:@"false"]){
+        [options setValue:@NO forKey:optionKey];
+    }
 }
 
 + (NSDictionary *)map:(NSDictionary *)dictionary withAttributes:(NSArray *)attributes
@@ -166,11 +178,6 @@
 - (NSNumber *)taplyticsOptionSessionBackgroundTime
 {
     return (NSNumber *)[self.settings objectForKey:@"sessionMinutes"];
-}
-
-- (NSNumber *)shakeMenu
-{
-    return (NSNumber *)[self.settings objectForKey:@"shakeMenu"];
 }
 
 - (NSNumber *)pushSandbox
