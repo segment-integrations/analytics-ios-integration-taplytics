@@ -22,7 +22,7 @@
         NSMutableDictionary *options = [[NSMutableDictionary alloc] init];
         [options setValue:[self delayLoad] forKey:@"delayLoad"];
         [options setValue:[self pushSandbox] forKey:@"pushSandbox"];
-        [options setValue:[self taplyticsOptionSessionBackgroundTime] forKey:@"TaplyticsOptionSessionBackgroundTime"];
+        [options setValue:[self taplyticsOptionSessionBackgroundTime] forKey:@"sessionBackgroundTime"];
         [SEGTaplyticsIntegration putDefaultBooleansWithSettings:settings withSettingsKey:@"liveUpdate_V2" andOptions:options withOptionsKey:@"liveUpdate"];
         [SEGTaplyticsIntegration putDefaultBooleansWithSettings:settings withSettingsKey:@"shakeMenu_V2" andOptions:options withOptionsKey:@"shakeMenu"];
 
