@@ -1,6 +1,6 @@
 //
 //  SEGTaplyticsIntegration.h
-//  
+//
 //
 //  Created by William Johnson on 4/21/16.
 //

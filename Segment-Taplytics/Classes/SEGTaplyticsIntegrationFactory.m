@@ -1,6 +1,6 @@
 //
 //  SEGTaplyticsIntegrationFactory.m
-//  
+//
 //
 //  Created by William Johnson on 4/25/16.
 //
@@ -8,6 +8,7 @@
 
 #import "SEGTaplyticsIntegrationFactory.h"
 #import "SEGTaplyticsIntegration.h"
+
 
 @implementation SEGTaplyticsIntegrationFactory
 
