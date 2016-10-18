@@ -1,6 +1,13 @@
 Change Log
 ==========
 
+Version 1.1.0 *(18th October, 2016)*
+-------------------------------------------
+*(Supports analytics-ios 3.0+ and Taplytics 2.13+)*
+
+ * Update Taplytics minimum dependency to 2.13+.
+ * [Fix](https://github.com/segment-integrations/analytics-ios-integration-taplytics/pull/8): Better support for optional dependencies.
+
 Version 1.0.0 *(19th July, 2016)*
 -------------------------------------------
 *(Supports analytics-ios 3.0+ and Taplytics 2.10+)*
