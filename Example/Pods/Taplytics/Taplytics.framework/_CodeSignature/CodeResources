@@ -6,19 +6,19 @@
 	<dict>
 		<key>Headers/Taplytics.h</key>
 		<data>
-		5I6yhKiQ8OLEMfyA4m5Ds3xERMs=
+		KMD/pIXvrC3DyGd4TgBMjxR3NOI=
 		</data>
 		<key>Headers/TaplyticsOptions.h</key>
 		<data>
-		bH6Cm7zXYhQD/MKwDqQl+ol9xXU=
+		fvORvAhdd0WymSHgRReyHoHnsAM=
 		</data>
 		<key>Headers/TaplyticsVar.h</key>
 		<data>
-		dKkJtF2YijRbs6lujaeOZOTbiKY=
+		AsCRn+ZqFNi/weGwBjli7JrTvQA=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		N/GdN9AVawhcvC2wAUtBX6SvS0U=
+		Q5hD9/gU15Qk6D9MS5FKjRuRKFA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -31,33 +31,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			5I6yhKiQ8OLEMfyA4m5Ds3xERMs=
+			KMD/pIXvrC3DyGd4TgBMjxR3NOI=
 			</data>
 			<key>hash2</key>
 			<data>
-			pvh6N1zlScONLQwW2C5gc3OekmrI2UskAzfwSORSfxI=
+			XN8Uukd1vslGKSG6+fB8KLu0E3JbHtIaUHykGyGRwtI=
 			</data>
 		</dict>
 		<key>Headers/TaplyticsOptions.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			bH6Cm7zXYhQD/MKwDqQl+ol9xXU=
+			fvORvAhdd0WymSHgRReyHoHnsAM=
 			</data>
 			<key>hash2</key>
 			<data>
-			SKDYB+/j+/acit1hZ0VrzcKnfLR5owfhIIoX1TsAeTs=
+			mSuHazOzm8a1n+m5K8pySWkGRzKfzbctV2mOfgX4ADU=
 			</data>
 		</dict>
 		<key>Headers/TaplyticsVar.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			dKkJtF2YijRbs6lujaeOZOTbiKY=
+			AsCRn+ZqFNi/weGwBjli7JrTvQA=
 			</data>
 			<key>hash2</key>
 			<data>
-			6APX8yFUXvGhcPUGEey+jhevT+48fXpXUrmL0JBkY8E=
+			UfT66ASRed/ZN5Gsft+W+rV1x513Yt0TwIzAMXltrV4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -89,6 +89,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^version.plist$</key>
 		<true/>
@@ -134,6 +139,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^Info\.plist$</key>
 		<dict>
