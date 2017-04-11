@@ -1,6 +1,6 @@
 //
 //  Taplytics.h
-//  Taplytics v2.13.0
+//  Taplytics v2.18.3
 //
 //  Copyright (c) 2015 Taplytics Inc. All rights reserved.
 //
@@ -63,8 +63,8 @@ typedef void(^TLPropertiesLoadedBlock)(BOOL loaded);
  Console Logging: Taplytics will only log to the console in development builds.
  @param apiKey Your API key
  @param options Taplytics options dictionary, used for testing. Options include:
-            - @{@"delayLoad":@2} allows Taplytics to show your app's launch image and load its configuration for a maximum number of seconds
-                on app launch, the default for first launch is 2 seconds. This is useful when running a code experiments on the first screen 
+            - @{@"delayLoad":@4} allows Taplytics to show your app's launch image and load its configuration for a maximum number of seconds
+                on app launch, the default for first launch is 4 seconds. This is useful when running a code experiments on the first screen
                 of your app, this will ensure that your users will get shown a variation on the first launch of your app. Set to @0 for no
                 delay.
             - @{@"liveUpdate":@NO} Taplytics will auto-detect an app store build or a development build. But to force production mode use @NO,
@@ -184,6 +184,13 @@ typedef void(^TLPropertiesLoadedBlock)(BOOL loaded);
  */
 + (void)getSessionInfo:(nullable void(^)(NSDictionary* _Nullable sessionInfo))callback;
 
+/**
+ End the current user session and create a new session. Calls taplytics to retrieve new experiment data if any.
+ 
+ @param callback called when the new session has begun.
+ */
++ (void)startNewSession:(nullable void(^)(BOOL success))callback;
+
 #pragma mark - Push Notifications
 
 /**
@@ -257,6 +264,15 @@ typedef void(^TLPropertiesLoadedBlock)(BOOL loaded);
  @param completionBlock Completion block called when fetch is complete, returns on main thread.
  */
 + (void)performBackgroundFetch:(nonnull void(^)(UIBackgroundFetchResult result))completionBlock;
+
+
+/**
+ Shows the launch image while Taplytics updates its configuration in the background.
+ This should ONLY be used in the case where the starting of Taplytics is delayed behind some network call.
+ Taplytics will not automatically show the launch image in cases where Taplytics isn't immediately initialzed in 'application:didFinishLaunchingWithOptions:'
+ */
++ (void)showAsyncLaunchImageForMaxTime:(nonnull NSNumber*) maxTime;
+
 
 @end
 
