@@ -9,7 +9,6 @@
 #import "SEGTaplyticsIntegrationFactory.h"
 #import "SEGTaplyticsIntegration.h"
 
-
 @implementation SEGTaplyticsIntegrationFactory
 
 + (instancetype)instance
@@ -19,6 +18,12 @@
     dispatch_once(&once, ^{
         sharedInstance = [[self alloc] init];
     });
+    return sharedInstance;
+}
+
++ (instancetype)initializeTaplyticsManually
+{
+    static SEGTaplyticsIntegrationFactory *sharedInstance;
     return sharedInstance;
 }
 
