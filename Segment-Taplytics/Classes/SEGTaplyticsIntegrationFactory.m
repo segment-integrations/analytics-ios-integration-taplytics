@@ -38,6 +38,13 @@
     return [[SEGTaplyticsIntegration alloc] initWithSettings:settings];
 }
 
+- (id<SEGIntegration>)createWithoutSettings
+{
+    return [[SEGTaplyticsIntegration alloc] init];
+}
+
+
+
 - (NSString *)key
 {
     return @"Taplytics";
