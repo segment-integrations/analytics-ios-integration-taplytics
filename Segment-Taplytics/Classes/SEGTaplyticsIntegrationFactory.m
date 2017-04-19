@@ -9,6 +9,12 @@
 #import "SEGTaplyticsIntegrationFactory.h"
 #import "SEGTaplyticsIntegration.h"
 
+@interface SEGTaplyticsIntegrationFactory()
+
+@property (nonatomic, assign) BOOL skipInitialization;
+
+@end
+
 @implementation SEGTaplyticsIntegrationFactory
 
 + (instancetype)instance
@@ -16,7 +22,7 @@
     static dispatch_once_t once;
     static SEGTaplyticsIntegrationFactory *sharedInstance;
     dispatch_once(&once, ^{
-        sharedInstance = [[self alloc] init];
+        sharedInstance = [[self alloc] initWithSkipInitialization:NO];
     });
     return sharedInstance;
 }
@@ -26,28 +32,27 @@
     static dispatch_once_t once;
     static SEGTaplyticsIntegrationFactory *sharedInstance;
     dispatch_once(&once, ^{
-        sharedInstance = [[self alloc] init];
+        sharedInstance = [[self alloc] initWithSkipInitialization:YES];
     });
     return sharedInstance;
 }
 
-- (instancetype)init
+- (instancetype)initWithSkipInitialization:(BOOL)skipInitialization
 {
-    self = [super init];
+    if (self = [super init]) {
+        self.skipInitialization = skipInitialization;
+    }
     return self;
 }
 
 - (id<SEGIntegration>)createWithSettings:(NSDictionary *)settings forAnalytics:(SEGAnalytics *)analytics
 {
+    if (self.skipInitialization) {
+        return [[SEGTaplyticsIntegration alloc] initWithSettingsAndSkipTaplyticsIntialization:settings];
+    }
+    
     return [[SEGTaplyticsIntegration alloc] initWithSettings:settings];
 }
-
-- (id<SEGIntegration>)createWithoutSettings: andTaplytics:(id)taplyticsClass
-{
-    return [[SEGTaplyticsIntegration alloc] initWithTaplytics:taplyticsClass];
-}
-
-
 
 - (NSString *)key
 {

@@ -41,10 +41,11 @@
     return self;
 }
 
-- (instancetype)initWithTaplytics:(id)taplyticsClass
+- (instancetype)initWithSettingsAndSkipTaplyticsIntialization:(NSDictionary *)settings
 {
     if (self = [super init]) {
-        self.taplyticsClass = taplyticsClass;
+        self.taplyticsClass = [Taplytics class];
+        self.settings = settings;
     }
     return self;
 }

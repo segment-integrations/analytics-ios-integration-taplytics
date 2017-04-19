@@ -20,6 +20,6 @@
 
 - (instancetype)initWithSettings:(NSDictionary *)settings andTaplytics:(id)taplyticsClass;
 
-- (instancetype)initWithTaplytics:(id)taplyticsClass;
+- (instancetype)initWithSettingsAndSkipTaplyticsIntialization:(NSDictionary *)settings;
 
 @end
