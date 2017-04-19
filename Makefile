@@ -1,12 +1,13 @@
 XCPRETTY := xcpretty -c && exit ${PIPESTATUS[0]}
 
 SDK ?= "iphonesimulator"
-DESTINATION ?= "platform=iOS Simulator,OS=9.0,name=iPhone 5"
+DESTINATION ?= "platform=iOS Simulator,name=iPhone 5"
 PROJECT := Segment-Taplytics
 XC_ARGS := -scheme $(PROJECT)-Example -workspace Example/$(PROJECT).xcworkspace -sdk $(SDK) -destination $(DESTINATION) ONLY_ACTIVE_ARCH=NO
 
 install: Example/Podfile Segment-Taplytics.podspec
-	pod install --project-directory=Example
+	pod repo update
+        pod install --project-directory=Example
 
 clean:
 	xcodebuild $(XC_ARGS) clean | $(XCPRETTY)
