@@ -11,7 +11,7 @@
 
 @interface SEGTaplyticsIntegrationFactory()
 
-@property (nonatomic, assign) BOOL skipInitialization;
+@property (nonatomic, assign) BOOL skipInit;
 
 @end
 
@@ -27,7 +27,7 @@
     return sharedInstance;
 }
 
-+ (instancetype)initializeTaplyticsManually
++ (instancetype)skipInitialization
 {
     static dispatch_once_t once;
     static SEGTaplyticsIntegrationFactory *sharedInstance;
@@ -37,17 +37,17 @@
     return sharedInstance;
 }
 
-- (instancetype)initWithSkipInitialization:(BOOL)skipInitialization
+- (instancetype)initWithSkipInitialization:(BOOL)skipInit
 {
     if (self = [super init]) {
-        self.skipInitialization = skipInitialization;
+        self.skipInit = skipInit;
     }
     return self;
 }
 
 - (id<SEGIntegration>)createWithSettings:(NSDictionary *)settings forAnalytics:(SEGAnalytics *)analytics
 {
-    if (self.skipInitialization) {
+    if (self.skipInit) {
         return [[SEGTaplyticsIntegration alloc] initWithSettingsAndSkipTaplyticsIntialization:settings];
     }
     

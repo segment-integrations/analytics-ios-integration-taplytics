@@ -25,6 +25,22 @@ SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWith
 
 ```
 
+### Initialization Taplytics without Segment
+
+If you would like to initialize Taplytics yourself to leverage functionality required on initialization, you can use Taplytics native methods to initialize then use `skipInitialization` to skip initializing through Segment.
+
+```
+NSString *const SEGMENT_WRITE_KEY = @" ... ";
+SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWithWriteKey:SEGMENT_WRITE_KEY];
+
+// Add Taplytics methods to initialize and any functionality required prior to initialization here.
+[Taplytics startTaplyticsAPIKey:<apiKey>....];
+
+[config use:[SEGTaplyticsIntegrationFactory skipInitialization]];
+
+[SEGAnalytics setupWithConfiguration:config];
+```
+
 ## License
 
 ```

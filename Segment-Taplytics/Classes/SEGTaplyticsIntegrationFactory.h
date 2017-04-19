@@ -6,6 +6,6 @@
 
 + (instancetype)instance;
 
-+ (instancetype)initializeTaplyticsManually;
++ (instancetype)skipInitialization;
 
 @end
