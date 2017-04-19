@@ -41,7 +41,7 @@
     return self;
 }
 
-- (instancetype)initWithoutSettings: andTaplytics:(Class)taplyticsClass
+- (instancetype)initWithTaplytics:(id)taplyticsClass
 {
     if (self = [super init]) {
         self.taplyticsClass = taplyticsClass;

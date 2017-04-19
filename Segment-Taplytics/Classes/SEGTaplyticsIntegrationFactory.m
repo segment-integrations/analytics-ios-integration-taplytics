@@ -23,7 +23,11 @@
 
 + (instancetype)initializeTaplyticsManually
 {
+    static dispatch_once_t once;
     static SEGTaplyticsIntegrationFactory *sharedInstance;
+    dispatch_once(&once, ^{
+        sharedInstance = [[self alloc] init];
+    });
     return sharedInstance;
 }
 
@@ -38,9 +42,9 @@
     return [[SEGTaplyticsIntegration alloc] initWithSettings:settings];
 }
 
-- (id<SEGIntegration>)createWithoutSettings
+- (id<SEGIntegration>)createWithoutSettings: andTaplytics:(id)taplyticsClass
 {
-    return [[SEGTaplyticsIntegration alloc] init];
+    return [[SEGTaplyticsIntegration alloc] initWithTaplytics:taplyticsClass];
 }
 
 
