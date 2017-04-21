@@ -41,6 +41,15 @@
     return self;
 }
 
+- (instancetype)initWithSettingsAndSkipTaplyticsIntialization:(NSDictionary *)settings
+{
+    if (self = [super init]) {
+        self.taplyticsClass = [Taplytics class];
+        self.settings = settings;
+    }
+    return self;
+}
+
 + (void)putDefaultBooleansWithSettings:(NSDictionary *)settings withSettingsKey:(NSString *)settingsKey andOptions:(NSMutableDictionary *)options withOptionsKey:(NSString *)optionKey
 {
     NSString *val = [settings objectForKey:settingsKey];

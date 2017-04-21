@@ -6,4 +6,6 @@
 
 + (instancetype)instance;
 
++ (instancetype)skipInitialization;
+
 @end
