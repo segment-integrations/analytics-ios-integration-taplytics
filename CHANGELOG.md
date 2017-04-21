@@ -1,5 +1,12 @@
 Change Log
 ==========
+Version 1.1.1 *(21st April, 2017)*
+-------------------------------------------
+*(Supports analytics-ios 3.0+ and Taplytics 2.15.5)+
+
+ * Bumps Taplytics dependency to 2.15.5.
+ * [Add](https://github.com/segment-integrations/analytics-ios-integration-taplytics/pull/15/files): `skipInitialization` instance which allows users to initialize Taplytics and run experiments. 
+
 
 Version 1.1.0 *(18th October, 2016)*
 -------------------------------------------

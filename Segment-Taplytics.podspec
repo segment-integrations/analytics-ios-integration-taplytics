@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name             = "Segment-Taplytics"
-s.version          = "1.1.0"
+s.version          = "1.1.1"
 s.summary          = "Taplytics Integration for Segment's analytics-ios library."
 
 s.description      = <<-DESC
