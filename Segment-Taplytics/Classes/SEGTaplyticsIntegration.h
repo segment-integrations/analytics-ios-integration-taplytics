@@ -21,5 +21,6 @@
 - (instancetype)initWithSettings:(NSDictionary *)settings andTaplytics:(id)taplyticsClass;
 
 - (instancetype)initWithSettingsAndSkipTaplyticsIntialization:(NSDictionary *)settings;
+- (void)callTrack;
 
 @end

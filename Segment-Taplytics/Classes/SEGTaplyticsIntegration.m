@@ -142,6 +142,17 @@
 
 - (void)track:(SEGTrackPayload *)payload
 {
+    if ([NSThread isMainThread]) {
+        [self callTrack:payload];
+    } else {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self callTrack:payload];
+        });
+    }
+}
+
+- (void)callTrack:(SEGTrackPayload *)payload
+{
     NSMutableDictionary *mutablePayload = [NSMutableDictionary dictionaryWithDictionary:payload.properties];
 
     NSNumber *revenue = [SEGTaplyticsIntegration extractRevenue:payload.properties withKey:@"revenue"];
