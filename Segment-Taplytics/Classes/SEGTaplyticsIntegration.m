@@ -81,8 +81,7 @@
 
     return [mapped copy];
 }
-
-- (void)identify:(SEGIdentifyPayload *)payload
+- (void)callIdentify:(SEGIdentifyPayload *)payload
 {
     NSArray *taplyticsAttributes = @[ @"user_id", @"name", @"firstName", @"lastName", @"email", @"age", @"gender", @"avatarUrl" ];
 
@@ -92,6 +91,18 @@
     NSDictionary *mappedTraits = [SEGTaplyticsIntegration map:mutablePayload withAttributes:taplyticsAttributes];
     [self.taplyticsClass setUserAttributes:mappedTraits];
     SEGLog(@"[[Taplytics sharedInstance] setUserAttributes:%@]", mappedTraits);
+}
+
+
+- (void)identify:(SEGIdentifyPayload *)payload
+{
+    if ([NSThread isMainThread]) {
+        [self callIdentify:payload];
+    } else {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self callIdentify:payload];
+        });
+    }
 }
 
 + (NSNumber *)extractValue:(NSDictionary *)dictionary withKey:(NSString *)valueKey
@@ -140,17 +151,6 @@
     return nil;
 }
 
-- (void)track:(SEGTrackPayload *)payload
-{
-    if ([NSThread isMainThread]) {
-        [self callTrack:payload];
-    } else {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self callTrack:payload];
-        });
-    }
-}
-
 - (void)callTrack:(SEGTrackPayload *)payload
 {
     NSMutableDictionary *mutablePayload = [NSMutableDictionary dictionaryWithDictionary:payload.properties];
@@ -175,6 +175,17 @@
 
     [self.taplyticsClass logEvent:payload.event value:nil metaData:payload.properties];
     SEGLog(@"[[Taplytics sharedInstance] logEvent:%@ value:nil metaData:%@]", payload.event, payload.properties);
+}
+
+- (void)track:(SEGTrackPayload *)payload
+{
+    if ([NSThread isMainThread]) {
+        [self callTrack:payload];
+    } else {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self callTrack:payload];
+        });
+    }
 }
 
 - (void)reset
