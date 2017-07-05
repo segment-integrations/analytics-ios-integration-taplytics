@@ -187,11 +187,21 @@
         });
     }
 }
-
-- (void)reset
+- (void)callReset
 {
     SEGLog(@"Taplytics resetUser");
     [self.taplyticsClass resetUser:nil];
+}
+
+- (void)reset
+{
+    if ([NSThread isMainThread]) {
+        [self callReset];
+    } else {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self callReset];
+        });
+    }
 }
 
 - (NSString *)apiKey
