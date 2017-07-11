@@ -1,5 +1,11 @@
 Change Log
 ==========
+Version 1.1.2 *(11th July, 2017)*
+-------------------------------------------
+*(Supports analytics-ios 3.0+ and Taplytics 2.15.5)+
+
+ * [Fix](https://github.com/segment-integrations/analytics-ios-integration-taplytics/pull/18): Deadlock issue by calling Segment methods async. 
+
 Version 1.1.1 *(21st April, 2017)*
 -------------------------------------------
 *(Supports analytics-ios 3.0+ and Taplytics 2.15.5)+
