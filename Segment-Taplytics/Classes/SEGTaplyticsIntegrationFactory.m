@@ -9,11 +9,13 @@
 #import "SEGTaplyticsIntegrationFactory.h"
 #import "SEGTaplyticsIntegration.h"
 
-@interface SEGTaplyticsIntegrationFactory()
+
+@interface SEGTaplyticsIntegrationFactory ()
 
 @property (nonatomic, assign) BOOL skipInit;
 
 @end
+
 
 @implementation SEGTaplyticsIntegrationFactory
 
@@ -50,7 +52,7 @@
     if (self.skipInit) {
         return [[SEGTaplyticsIntegration alloc] initWithSettingsAndSkipTaplyticsIntialization:settings];
     }
-    
+
     return [[SEGTaplyticsIntegration alloc] initWithSettings:settings];
 }
 
