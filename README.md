@@ -1,5 +1,6 @@
 # Segment-Taplytics
 
+[![CircleCI](https://circleci.com/gh/segment-integrations/analytics-ios-integration-taplytics.svg?style=svg)](https://circleci.com/gh/segment-integrations/analytics-ios-integration-taplytics)
 [![Version](https://img.shields.io/cocoapods/v/Segment-Taplytics.svg?style=flat)](http://cocoapods.org/pods/Segment-Taplytics)
 [![License](https://img.shields.io/cocoapods/l/Segment-Taplytics.svg?style=flat)](http://cocoapods.org/pods/Segment-Taplytics)
 [![Platform](https://img.shields.io/cocoapods/p/Segment-Taplytics.svg?style=flat)](http://cocoapods.org/pods/Segment-Taplytics)
