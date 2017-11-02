@@ -1,6 +1,5 @@
 # Segment-Taplytics
 
-[![CI Status](http://img.shields.io/travis/segment-integrations/analytics-ios-integration-taplytics.svg?style=flat)](https://travis-ci.org/segment-integrations/analytics-ios-integration-taplytics)
 [![Version](https://img.shields.io/cocoapods/v/Segment-Taplytics.svg?style=flat)](http://cocoapods.org/pods/Segment-Taplytics)
 [![License](https://img.shields.io/cocoapods/l/Segment-Taplytics.svg?style=flat)](http://cocoapods.org/pods/Segment-Taplytics)
 [![Platform](https://img.shields.io/cocoapods/p/Segment-Taplytics.svg?style=flat)](http://cocoapods.org/pods/Segment-Taplytics)
@@ -25,7 +24,7 @@ SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWith
 
 ```
 
-### Initialization Taplytics without Segment
+### Initialize Taplytics without Segment
 
 If you would like to initialize Taplytics yourself to leverage functionality required on initialization, you can use Taplytics native methods to initialize then use `skipInitialization` to skip initializing through Segment.
 
