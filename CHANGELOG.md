@@ -1,5 +1,9 @@
 Change Log
 ==========
+Version 1.1.4 *(7th October, 2020)*
+-------------------------------------------
+* Update SEGAnalytics imports to support new namespacing introduced in v4.x
+
 Version 1.1.2 *(11th July, 2017)*
 -------------------------------------------
 *(Supports analytics-ios 3.0+ and Taplytics 2.15.5)+
