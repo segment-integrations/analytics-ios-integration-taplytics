@@ -33,3 +33,5 @@ Carthage
 Pods/
 Example/Pods/
 .clang-format
+
+.idea
