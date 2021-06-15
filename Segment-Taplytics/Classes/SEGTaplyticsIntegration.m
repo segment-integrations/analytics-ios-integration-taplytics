@@ -191,6 +191,25 @@
         });
     }
 }
+
+- (void)callScreen:(SEGScreenPayload *)payload
+{
+    NSString *eventName = [NSString stringWithFormat:@"Viewed %@ screen", payload.name];
+    [self.taplyticsClass logEvent:eventName value:nil metaData: payload.properties];
+    SEGLog(@"[[Taplytics sharedInstance] logEvent:%@ value:nil metaData:%@]", eventName, payload.properties);
+}
+
+- (void)screen:(SEGScreenPayload *)payload
+{
+    if ([NSThread isMainThread]) {
+        [self callScreen:payload];
+    } else {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self callScreen:payload];
+        });
+    }
+}
+
 - (void)callReset
 {
     SEGLog(@"Taplytics resetUser");
