@@ -18,9 +18,10 @@ s.social_media_url = 'https://twitter.com/segment'
 
 s.platform     = :ios, '8.0'
 s.requires_arc = true
+s.static_framework = true
 
 s.source_files = 'Segment-Taplytics/Classes/**/*'
 
 s.dependency 'Analytics'
-s.dependency 'Taplytics', '~> 2.15.5'
+s.dependency 'Taplytics', '~> 3'
 end
