@@ -23,5 +23,5 @@ s.static_framework = true
 s.source_files = 'Segment-Taplytics/Classes/**/*'
 
 s.dependency 'Analytics'
-s.dependency 'Taplytics', '~> 3'
+s.dependency 'Taplytics', '~> 4'
 end
