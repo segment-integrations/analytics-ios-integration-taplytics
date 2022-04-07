@@ -1,14 +1,14 @@
 PODS:
-  - Analytics (4.1.4)
-  - Expecta (1.0.5)
-  - OCHamcrest (6.1.1)
-  - OCMockito (4.1.0):
-    - OCHamcrest (~> 6.0)
-  - Segment-Taplytics (1.1.4):
+  - Analytics (4.1.6)
+  - Expecta (1.0.6)
+  - OCHamcrest (8.0.0)
+  - OCMockito (6.0.0):
+    - OCHamcrest (~> 8.0)
+  - Segment-Taplytics (1.3.0):
     - Analytics
-    - Taplytics (~> 3)
-  - Specta (1.0.6)
-  - Taplytics (3.0.0)
+    - Taplytics (~> 4)
+  - Specta (2.0.0)
+  - Taplytics (4.0.1)
 
 DEPENDENCIES:
   - Expecta
@@ -30,14 +30,14 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Analytics: 7bdc735c456434b4eaa2eacdcf122bb03d51ede7
-  Expecta: e1c022fcd33910b6be89c291d2775b3fe27a89fe
-  OCHamcrest: 363e1bf738c3e8a94abe7c2c415f70d671adde38
-  OCMockito: bceefcd365252bcdf8b59c1b2bd23890805fc0d8
-  Segment-Taplytics: a85b0d5403f580f3ef79e83c6f7e3ec92a7547ee
-  Specta: f506f3a8361de16bc0dcf3b17b75e269072ba465
-  Taplytics: e0bbf6ed4fc4d8c4beb65d4b3f5a65ea3261c73a
+  Analytics: eefe524436f904b8bb3f8c8c3425280e43b34efc
+  Expecta: 3b6bd90a64b9a1dcb0b70aa0e10a7f8f631667d5
+  OCHamcrest: a613690381f1dac7637c18962c10dbe8feca4bb5
+  OCMockito: 780f04370226f81a9d972c97d1203864ef609f5b
+  Segment-Taplytics: 8efaf6319b576701e7b6148f8ecb2da9856aa570
+  Specta: b79d84043684b35ffdc2680df578dc318ec2efc2
+  Taplytics: f352a63de513b9ad774b41aab506a3b43f30f1da
 
-PODFILE CHECKSUM: 628429fdb506eb32767cc4ec540d911f0f52ca03
+PODFILE CHECKSUM: 742084719cf7a02deb94cd7fd88e922ad548aca0
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.2
