@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+Version 1.3.0 *(7th April, 2022)*
+-------------------------------------------
+* Update Taplytics Dependency to 4.x
+
 Version 1.2.0 *(15th June, 2021)*
 -------------------------------------------
 * Update Taplytics Dependency to 3.0.0 
