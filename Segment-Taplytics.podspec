@@ -24,4 +24,7 @@ s.source_files = 'Segment-Taplytics/Classes/**/*'
 
 s.dependency 'Analytics'
 s.dependency 'Taplytics', '~> 4'
+s.pod_target_xcconfig = {
+  'ARCHS[sdk=iphonesimulator*]' => '$(ARCHS_STANDARD_64_BIT)'
+}
 end
